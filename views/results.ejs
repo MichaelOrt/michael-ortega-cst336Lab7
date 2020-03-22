@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Pixabay Search (Express Version) </title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body>
+        <h1> Pixabay Search (Express Version) </h1>
+        <div id="inputDiv">
+            <form action="/results" method="GET">
+                <strong>KEYWORD:</strong>
+                <input type="text" name="keyword"><br>
+                <strong>Orientation:</strong>
+                <select id="layot" name="orientation">
+                    <option value="horizontal">horizontal</option>
+                    <option value="vertical">vertical</option>
+                </select>
+                <button> Search! </button>
+            </form> <br>
+        </div>
+        <div id="imageDiv">
+            <% rndArry.forEach(function(indx) { %>
+            <figure><span>Likes:<%=image.hits[indx].likes%></span><img src='<%=image.hits[indx].largeImageURL%>'></figure>
+            <% }); %>
+        </div>
+    </body>
+</html>

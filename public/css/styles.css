@@ -1,0 +1,53 @@
+body{
+	color: #007bff;
+}
+
+figure{
+	width: 25%;
+	margin: 5px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+img{
+	width: 100%;
+	border-radius: 10%;
+	margin-top: 10px;
+}
+#imageDiv{
+	border-top: 2px solid grey;
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: no wrap;
+	flex-direction: row;
+}
+
+h1{
+	text-align: center
+}
+#inputDiv{
+	text-align: center; 
+}
+
+span{
+	color: white;
+	padding: 5px;
+	background-color: #007bff;
+	border-radius: 25px;
+}
+
+#searchImg{
+	margin-bottom: 5px;
+}
+
+button{
+  transition-duration: 0.4s;
+  height: 25px;
+  border-radius: 5px;
+  width: 100px;
+}
+
+button:hover {
+  background-color: #007bff;
+  color: white;
+}
