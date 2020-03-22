@@ -19,9 +19,13 @@
             </form> <br>
         </div>
         <div id="imageDiv">
-            <% rndArry.forEach(function(indx) { %>
-            <figure><span>Likes:<%=image.hits[indx].likes%></span><img src='<%=image.hits[indx].largeImageURL%>'></figure>
-            <% }); %>
+            <% if(image.total > 0){ %>
+                <% rndArry.forEach(function(indx) { %>
+                <figure><span>Likes:<%=image.hits[indx].likes%></span><img src='<%=image.hits[indx].largeImageURL%>'></figure>
+                <% }); %>
+            <% } else {%>
+                <span style="margin-left:40%; margin-top:5%; font-size: 40px;">Sorry no results found!</span>
+            <% } %>
         </div>
     </body>
 </html>

@@ -8,10 +8,9 @@ const request = require('request');
 //routes
 app.get("/", async function(req, res){
     
- let parsedData = await getImages("otters");
+ let parsedData = await getImages("basketball");
  
   var indxArry = randomImage(parsedData)
-    
  res.render("index", {"image":parsedData, "rndArry":indxArry});
             
 }); //root route
@@ -24,8 +23,10 @@ app.get("/results", async function(req, res){
     let orientation = req.query.orientation;
     
     let parsedData = await getImages(keyword, orientation);
-    var indxArry = randomImage(parsedData)
+    var indxArry = randomImage(parsedData);
+    
 
+    
    res.render("results", {"image":parsedData, "rndArry":indxArry});
     
 });//results route
@@ -52,10 +53,6 @@ function getImages(keyword, orientation){
                  let parsedData = JSON.parse(body); //converts string to JSON
                  
                  resolve(parsedData);
-                
-                //let randomIndex = Math.floor(Math.random() * parsedData.hits.length);
-                //res.send(`<img src='${parsedData.hits[randomIndex].largeImageURL}'>`);
-                //res.render("index", {"image":parsedData.hits[randomIndex].largeImageURL});
                 
             } else {
                 reject(error);
