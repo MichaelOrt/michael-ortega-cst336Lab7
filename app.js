@@ -8,7 +8,7 @@ const request = require('request');
 //routes
 app.get("/", async function(req, res){
     
- let parsedData = await getImages("basketball");
+ let parsedData = await getImages("rose");
  
   var indxArry = randomImage(parsedData)
  res.render("index", {"image":parsedData, "rndArry":indxArry});
